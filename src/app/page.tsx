@@ -16,7 +16,7 @@ const translations = {
 	},
 	es: {
 		title: 'Carlos Nieto',
-		subtitle: 'QA Engineer al que le encanta la Automatización la Experiencia de Usuario y la IA',
+		subtitle: 'QA Engineer al que le encanta la Automatización, la Experiencia de Usuario y la IA',
 		aboutTitle: 'Sobre mí',
 		aboutText: 'Soy un QA Engineer apasionado por la automatización y la inteligencia artificial. Me encanta crear soluciones innovadoras para mejorar la calidad del software.'
 	},
