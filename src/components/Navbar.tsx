@@ -56,7 +56,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 						>
 							<option value="en" className="text-black">🇬🇧 EN</option>
 							<option value="es" className="text-black">🇪🇸 ES</option>
-							<option value="ca" className="text-black">🐉 CA</option>
+							<option value="ca" className="text-black">🫏 CA</option>
 
 						</select>
 					</div>
@@ -104,12 +104,15 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 							<div className="pt-2 flex justify-end">
 								<select
 									value={language}
-									onChange={(e) => setLanguage(e.target.value as Language)}
+									onChange={(e) => {
+										setLanguage(e.target.value as Language)
+										setIsOpen(false)
+									}}
 									className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white backdrop-blur"
 								>
 									<option value="en" className="text-black">🇬🇧 English</option>
 									<option value="es" className="text-black">🇪🇸 Español</option>
-									<option value="ca" className="text-black">🐉 Català</option>
+									<option value="ca" className="text-black">🫏 Català</option>
 
 								</select>
 							</div>
