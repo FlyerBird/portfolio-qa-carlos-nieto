@@ -48,13 +48,26 @@ export default function Home() {
 							transition={{ duration: 0.8, ease: "easeOut" }}
 							className="text-center md:text-left"
 						>
-							<motion.h1
-								initial={{ opacity: 0, y: 30 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-								className="text-6xl font-bold mb-4"
-							>
-								{t.title}
+							<motion.h1 className="text-4xl md:text-6xl font-bold text-center mb-4">
+								{t.title.split('').map((char, index) => (
+									<motion.span
+										key={index}
+										initial={{ opacity: 0, y: 30 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{
+											duration: 0.5,
+											delay: 0.2 + index * 0.05,
+											ease: "easeOut"
+										}}
+										className="inline-block"
+										style={{
+											fontFamily: 'var(--font-jetbrains-mono)',
+											fontWeight: 'bold'
+										}}
+									>
+										{char === ' ' ? '\u00A0' : char}
+									</motion.span>
+								))}
 							</motion.h1>
 							<motion.p
 								initial={{ opacity: 0, y: 20 }}
