@@ -133,37 +133,6 @@ export default function Home() {
 									/>
 								</motion.div>
 
-								{/* Partículas mágicas en hover */}
-								{showSecondPhoto && (
-									<motion.div
-										initial={{ opacity: 0 }}
-										animate={{ opacity: 1 }}
-										className="absolute -inset-4 pointer-events-none"
-									>
-										{[...Array(8)].map((_, i) => (
-											<motion.div
-												key={i}
-												className="absolute w-2 h-2 bg-blue-400 rounded-full"
-												initial={{
-													x: '50%',
-													y: '50%',
-													scale: 0
-												}}
-												animate={{
-													x: `${50 + Math.cos(i * Math.PI / 4) * 60}%`,
-													y: `${50 + Math.sin(i * Math.PI / 4) * 60}%`,
-													scale: [0, 1, 0]
-												}}
-												transition={{
-													duration: 1.5,
-													repeat: Infinity,
-													delay: i * 0.1,
-													ease: "easeOut"
-												}}
-											/>
-										))}
-									</motion.div>
-								)}
 							</motion.div>
 
 							{/* Indicador sutil para mobile */}
