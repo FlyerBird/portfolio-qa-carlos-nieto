@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
-import AboutSection from '@/components/sections/AboutSection'
 import SkillsSection from '@/components/sections/SkillsSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
 import ContactSection from '@/components/sections/ContactSection'
@@ -37,8 +36,7 @@ export default function Home() {
 	return (
 		<main className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-black text-white">
 			<Navbar language={language} setLanguage={setLanguage} />
-			<HeroSection translations={t} />
-			<AboutSection translations={t} />
+			<HeroSection translations={t} language={language} />
 			<SkillsSection language={language} />
 			<ProjectsSection language={language} />
 			<ContactSection language={language} />

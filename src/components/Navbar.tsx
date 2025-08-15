@@ -3,15 +3,15 @@ import { useState } from 'react'
 
 type Language = 'es' | 'ca' | 'en'
 
-interface NavbarProps {
+type NavbarProps = {
 	language: Language
 	setLanguage: (lang: Language) => void
 }
 
 const navTranslations = {
-	en: { about: 'About', projects: 'Projects', contact: 'Contact' },
-	es: { about: 'Sobre mí', projects: 'Proyectos', contact: 'Contacto' },
-	ca: { about: 'Sobre mi', projects: 'Projectes', contact: 'Contacte' }
+	en: { about: 'About', skills: 'Skills', projects: 'Projects', contact: 'Contact' },
+	es: { about: 'Sobre mí', skills: 'Habilidades', projects: 'Proyectos', contact: 'Contacto' },
+	ca: { about: 'Sobre mi', skills: 'Habilitats', projects: 'Projectes', contact: 'Contacte' }
 }
 
 export default function Navbar({ language, setLanguage }: NavbarProps) {
@@ -23,7 +23,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 			<div className="container mx-auto px-4 py-4">
 				<div className="flex justify-between items-center">
 					{/* Logo/Name - Solo logo CN minimalista */}
-					<a href="#home" className="hover:scale-110 transition-transform duration-300">
+					<a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:scale-110 transition-transform duration-300">
 						<div className="w-10 h-10">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-full h-full">
 								<defs>
@@ -42,7 +42,8 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex space-x-6">
-						<a href="#about" className="hover:text-blue-400 transition-colors">{t.about}</a>
+						<a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-blue-400 transition-colors">{t.about}</a>
+						<a href="#skills" className="hover:text-blue-400 transition-colors">{t.skills}</a>
 						<a href="#projects" className="hover:text-blue-400 transition-colors">{t.projects}</a>
 						<a href="#contact" className="hover:text-blue-400 transition-colors">{t.contact}</a>
 					</div>
@@ -57,7 +58,6 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 							<option value="en" className="text-black">🇬🇧 EN</option>
 							<option value="es" className="text-black">🇪🇸 ES</option>
 							<option value="ca" className="text-black">🫏 CA</option>
-
 						</select>
 					</div>
 
@@ -76,14 +76,25 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 
 				{/* Mobile Navigation */}
 				{isOpen && (
-					<div className="md:hidden mt-4 pb-4 border-t border-white/10">
+					<div className="md:hidden mt-4 pb-4 border-t border-white/10 relative z-[60]">
 						<div className="flex flex-col space-y-2 pt-4">
 							<a
-								href="#about"
-								onClick={() => setIsOpen(false)}
+								href="#"
+								onClick={(e) => {
+									e.preventDefault();
+									window.scrollTo({ top: 0, behavior: 'smooth' });
+									setIsOpen(false);
+								}}
 								className="block w-full text-right py-3 px-4 rounded-lg transition-all duration-200 active:bg-white/20 focus:bg-white/10 active:scale-95"
 							>
 								{t.about}
+							</a>
+							<a
+								href="#skills"
+								onClick={() => setIsOpen(false)}
+								className="block w-full text-right py-3 px-4 rounded-lg transition-all duration-200 active:bg-white/20 focus:bg-white/10 active:scale-95"
+							>
+								{t.skills}
 							</a>
 							<a
 								href="#projects"
@@ -101,20 +112,43 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 							</a>
 
 							{/* Mobile Language Selector */}
-							<div className="pt-2 flex justify-end">
-								<select
-									value={language}
-									onChange={(e) => {
-										setLanguage(e.target.value as Language)
+							<div className="pt-2 flex justify-end gap-2">
+								<button
+									onClick={() => {
+										setLanguage('en')
 										setIsOpen(false)
 									}}
-									className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white backdrop-blur"
+									className={`px-3 py-2 rounded-lg text-sm transition-all ${language === 'en'
+										? 'bg-blue-500/30 text-blue-300 border border-blue-400/50'
+										: 'bg-white/10 text-gray-300 border border-white/20'
+										}`}
 								>
-									<option value="en" className="text-black">🇬🇧 English</option>
-									<option value="es" className="text-black">🇪🇸 Español</option>
-									<option value="ca" className="text-black">🫏 Català</option>
-
-								</select>
+									🇬🇧 EN
+								</button>
+								<button
+									onClick={() => {
+										setLanguage('es')
+										setIsOpen(false)
+									}}
+									className={`px-3 py-2 rounded-lg text-sm transition-all ${language === 'es'
+										? 'bg-blue-500/30 text-blue-300 border border-blue-400/50'
+										: 'bg-white/10 text-gray-300 border border-white/20'
+										}`}
+								>
+									🇪🇸 ES
+								</button>
+								<button
+									onClick={() => {
+										setLanguage('ca')
+										setIsOpen(false)
+									}}
+									className={`px-3 py-2 rounded-lg text-sm transition-all ${language === 'ca'
+										? 'bg-blue-500/30 text-blue-300 border border-blue-400/50'
+										: 'bg-white/10 text-gray-300 border border-white/20'
+										}`}
+								>
+									🫏 CA
+								</button>
 							</div>
 						</div>
 					</div>
