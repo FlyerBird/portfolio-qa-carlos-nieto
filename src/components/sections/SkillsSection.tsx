@@ -198,17 +198,41 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
 		{
 			icon: '🧠',
 			title: {
-				es: 'Soft Skills',
+				es: 'Habilidades Blandas',
 				ca: 'Habilitats Toves',
 				en: 'Soft Skills'
 			},
 			tools: [
-				{ name: '🧠 Quick Learner' },
-				{ name: '🤝 Team Player' },
-				{ name: '🎯 Problem Solving' },
-				{ name: '💬 Good Communication' },
-				{ name: '🔄 Adaptability' },
-				{ name: '🚀 Entrepreneurial' }
+				{
+					name: language === 'es' ? '🧠 Aprendizaje Rápido' :
+						language === 'ca' ? '🧠 Aprenentatge Ràpid' :
+							'🧠 Quick Learner'
+				},
+				{
+					name: language === 'es' ? '🤝 Trabajo en Equipo' :
+						language === 'ca' ? '🤝 Treball en Equip' :
+							'🤝 Team Player'
+				},
+				{
+					name: language === 'es' ? '🎯 Resolución de Problemas' :
+						language === 'ca' ? '🎯 Resolució de Problemes' :
+							'🎯 Problem Solving'
+				},
+				{
+					name: language === 'es' ? '💬 Buena Comunicación' :
+						language === 'ca' ? '💬 Bona Comunicació' :
+							'💬 Good Communication'
+				},
+				{
+					name: language === 'es' ? '🔄 Adaptabilidad' :
+						language === 'ca' ? '🔄 Adaptabilitat' :
+							'🔄 Adaptability'
+				},
+				{
+					name: language === 'es' ? '🚀 Emprendedor' :
+						language === 'ca' ? '🚀 Emprenedor' :
+							'🚀 Entrepreneurial'
+				}
 			],
 			bgGradient: 'bg-gradient-to-br from-indigo-500/10 to-purple-600/10',
 			borderColor: 'border-indigo-500/20',
