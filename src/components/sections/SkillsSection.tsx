@@ -88,6 +88,11 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
 							name: 'Postman',
 							logo: '/logos/postman.png',
 							url: 'https://postman.com/'
+						},
+						{
+							name: 'Curl',
+							logo: '/logos/curl.png',
+							url: 'https://curl.se/'
 						}
 					]
 				}
@@ -329,7 +334,7 @@ const SkillCard = ({ icon, title, tools, testingSubsections, bgGradient, borderC
 								</span>
 								{subsection.title[language]}
 							</h4>
-							<div className="grid grid-cols-1 gap-3">
+							<div className={`grid gap-3 ${subsection.title.en === 'API' ? 'grid-cols-2' : 'grid-cols-1'}`}>
 								{subsection.tools.map((tool, toolIndex) => (
 									<ToolItem
 										key={`${subIndex}-${toolIndex}`}
