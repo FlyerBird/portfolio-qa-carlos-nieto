@@ -123,7 +123,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 										: 'bg-white/10 text-gray-300 border border-white/20'
 										}`}
 								>
-									EN
+									English
 								</button>
 								<button
 									onClick={() => {
@@ -135,7 +135,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 										: 'bg-white/10 text-gray-300 border border-white/20'
 										}`}
 								>
-									🇪ES
+									Español
 								</button>
 								<button
 									onClick={() => {
@@ -147,7 +147,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 										: 'bg-white/10 text-gray-300 border border-white/20'
 										}`}
 								>
-									CA
+									Català
 								</button>
 							</div>
 						</div>
