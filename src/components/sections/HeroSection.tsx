@@ -293,7 +293,7 @@ const HeroSection = ({ translations: t, language }: HeroSectionProps) => {
 									{/* Image container */}
 									<div className="relative bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm rounded-2xl p-1 border border-white/20">
 										<Image
-											src="/images/profile.jpg"
+											src="/images/illustration-profile.png"
 											alt="Carlos Nieto - QA Engineer"
 											width={400}
 											height={500}
