@@ -55,9 +55,9 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 							onChange={(e) => setLanguage(e.target.value as Language)}
 							className="bg-white/10 border border-white/20 rounded px-3 py-1 text-white backdrop-blur"
 						>
-							<option value="en" className="text-black">🇬🇧 EN</option>
-							<option value="es" className="text-black">🇪🇸 ES</option>
-							<option value="ca" className="text-black">🫏 CA</option>
+							<option value="en" className="text-black">English</option>
+							<option value="es" className="text-black">Español</option>
+							<option value="ca" className="text-black">Català</option>
 						</select>
 					</div>
 
@@ -123,7 +123,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 										: 'bg-white/10 text-gray-300 border border-white/20'
 										}`}
 								>
-									🇬🇧 EN
+									EN
 								</button>
 								<button
 									onClick={() => {
@@ -135,7 +135,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 										: 'bg-white/10 text-gray-300 border border-white/20'
 										}`}
 								>
-									🇪🇸 ES
+									🇪ES
 								</button>
 								<button
 									onClick={() => {
@@ -147,7 +147,7 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
 										: 'bg-white/10 text-gray-300 border border-white/20'
 										}`}
 								>
-									🫏 CA
+									CA
 								</button>
 							</div>
 						</div>
