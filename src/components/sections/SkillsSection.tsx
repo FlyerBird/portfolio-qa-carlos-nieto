@@ -77,7 +77,7 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
 						},
 						{
 							name: 'k6',
-							logo: '/logos/k6.png',
+							logo: '/logos/k6-logo.png',
 							url: 'https://k6.io/'
 						}
 					]
