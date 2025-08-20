@@ -15,6 +15,11 @@ Personal portfolio built with Next.js 14, TypeScript, Tailwind CSS and Framer Mo
 - Smooth animations
 - SEO optimized
 
+## ⚡ Interactive Elements
+- **Clickable Tech Logos**: Most technology logos in the Skills section link to their official websites
+- **Smooth Navigation**: Navbar with scroll-to-section functionality
+- **Language Switcher**: Toggle between Spanish, Catalan, and English
+
 ## 🛠️ Local development
 ```bash
 npm install

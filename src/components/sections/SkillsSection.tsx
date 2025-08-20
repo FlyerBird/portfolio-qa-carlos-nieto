@@ -74,6 +74,11 @@ const SkillsSection = ({ language }: SkillsSectionProps) => {
 							name: 'Lighthouse',
 							logo: 'https://developers.google.com/web/tools/lighthouse/images/lighthouse-logo.svg',
 							url: 'https://developers.google.com/web/tools/lighthouse'
+						},
+						{
+							name: 'k6',
+							logo: '/logos/k6.png',
+							url: 'https://k6.io/'
 						}
 					]
 				},
@@ -334,7 +339,7 @@ const SkillCard = ({ icon, title, tools, testingSubsections, bgGradient, borderC
 								</span>
 								{subsection.title[language]}
 							</h4>
-							<div className={`grid gap-3 ${subsection.title.en === 'API' ? 'grid-cols-2' : 'grid-cols-1'}`}>
+							<div className={`grid gap-3 ${subsection.title.en === 'API' || subsection.title.en === 'Performance' ? 'grid-cols-2' : 'grid-cols-1'}`}>
 								{subsection.tools.map((tool, toolIndex) => (
 									<ToolItem
 										key={`${subIndex}-${toolIndex}`}
