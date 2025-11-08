@@ -198,6 +198,26 @@ const HeroSection = ({ translations: t, language }: HeroSectionProps) => {
 							{t.subtitle}
 						</motion.p>
 
+						{/* CTA Button */}
+						<motion.div
+							initial={{ opacity: 0, y: 30 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1, delay: 1.2 }}
+							className="mb-12"
+						>
+							<a
+								href="#projects"
+								className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+							>
+								<span>
+									{language === 'es' && 'Ver Proyectos'}
+									{language === 'ca' && 'Veure Projectes'}
+									{language === 'en' && 'View Projects'}
+								</span>
+
+							</a>
+						</motion.div>
+
 						{/* Scroll indicator */}
 						<motion.div
 							initial={{ opacity: 0 }}
@@ -333,8 +353,8 @@ const HeroSection = ({ translations: t, language }: HeroSectionProps) => {
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</div >
+		</section >
 	)
 }
 

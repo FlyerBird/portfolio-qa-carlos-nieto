@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Github } from 'lucide-react'
+import Image from 'next/image'
 
 type Language = 'es' | 'ca' | 'en'
 
@@ -55,36 +56,42 @@ const ProjectsSection = ({ language }: ProjectsSectionProps) => {
 						</a>
 					</motion.div>
 
-					{/* Work in Progress Card - Animated */}
+					{/* Créixer Project Card - Animated */}
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 						viewport={{ once: true }}
 						whileHover={{ scale: 1.02, y: -5 }}
-						className="bg-white/5 backdrop-blur rounded-lg p-6 border border-white/10 relative overflow-hidden cursor-pointer"
+						className="bg-white/5 backdrop-blur rounded-lg p-6 border border-white/10 cursor-pointer"
 					>
-						<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent blur-sm"></div>
-						<div className="relative">
-							<div className="text-3xl mb-4 opacity-50">🚧</div>
-							<h3 className="text-xl font-bold mb-2 opacity-75">
-								{language === 'es' && 'Más proyectos próximamente'}
-								{language === 'ca' && 'Més projectes aviat'}
-								{language === 'en' && 'More projects coming soon'}
-							</h3>
-							<p className="text-gray-400 text-sm mb-4">
-								{language === 'es' && 'Trabajando en nuevos experimentos con IA y automatización'}
-								{language === 'ca' && 'Treballant en nous experiments amb IA i automatització'}
-								{language === 'en' && 'Working on new experiments with AI and automation'}
-							</p>
-							<div className="inline-block bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded text-xs">
-								Work in Progress
-							</div>
+						<div className="mb-4">
+							<Image
+								src="/logos/creixer-logo-blanco.png"
+								alt="Créixer Logo"
+								width={180}
+								height={60}
+								className="object-contain"
+							/>
 						</div>
+						<p className="text-gray-300 text-sm mb-6">
+							{language === 'es' && 'Rediseño web responsive con optimización de performance y UX/UI'}
+							{language === 'ca' && 'Redisseny web responsive amb optimització de rendiment i UX/UI'}
+							{language === 'en' && 'Responsive web redesign with performance and UX/UI optimization'}
+						</p>
+
+						<a
+							href={`/projects/creixer?lang=${language}`}
+							className="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-colors inline-flex items-center gap-2 border border-white/20"
+						>
+							{language === 'es' && 'Ver Proyecto →'}
+							{language === 'ca' && 'Veure Projecte →'}
+							{language === 'en' && 'View Project →'}
+						</a>
 					</motion.div>
 				</div>
 			</div>
-		</section>
+		</section >
 	)
 }
 
